@@ -1,0 +1,41 @@
+{
+  "name": "angular-firebase-form",
+  "version": "0.0.1",
+  "authors": [
+    "Sinan Bolel <sinanbolel@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sbolel/angular-firebase-form.git"
+  },
+  "description": "Contact form for AngularJS with Firebase and Angular Material",
+  "homepage": "https://github.com/sbolel/angular-firebase-form",
+  "main": "release/angular-firebase-form.js",
+  "keywords": [
+    "form",
+    "contact",
+    "Angular",
+    "AngularJS",
+    "Firebase",
+    "angular-material",
+    "Material"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "**/bower_components/*",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-aria": "~1.4.4",
+    "angular-material": "~0.10.1",
+    "firebase": "~2.2.9",
+    "angular-animate": "~1.4.4"
+  },
+  "devDependencies": {
+    "angular-route": "~1.4.4"
+  }
+}
