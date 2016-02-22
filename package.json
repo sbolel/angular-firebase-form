@@ -1,6 +1,6 @@
 {
   "name": "angular-firebase-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Contact form for AngularJS with Firebase and Angular Material",
   "main": "release/angular-firebase-form.js",
   "scripts": {
