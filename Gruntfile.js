@@ -99,26 +99,7 @@ module.exports = function(grunt) {
           'demo/release/vendor.min.js': ['demo/release/vendor.js']
         }
       }
-    },
-
-    watch: {
-      html: {
-        files: ['demo/**/*.html'],
-        options: {
-          livereload: true
-        }
-      },
-      js: {
-        files: ['demo/**/*.js'],
-        options: {
-          livereload: true
-        }
-      },
-      bower: {
-        files: ['bower.json'],
-        tasks:[]
-      }
-    },
+    }
 
   });
   
@@ -136,7 +117,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build:vendor', ['ngAnnotate:vendor', 'uglify:vendor', 'clean']);
   grunt.registerTask('build', ['build:demo', 'build:vendor']);
 
-  grunt.registerTask('serve', ['connect', 'watch']);
+  grunt.registerTask('serve', ['connect']);
   grunt.registerTask('default', ['serve']);
 
 };

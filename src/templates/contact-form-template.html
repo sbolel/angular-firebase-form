@@ -1,11 +1,11 @@
 <form name="contactForm" ng-submit="submit()" layout="column" class="mt20" style="margin:auto;width:100%;max-width:640px;">
   <h4>What's your info?</h4>
-  <div layout-gt-md="row" layout-md="column">
-    <md-input-container flex>
+  <div layout="row" layout-xs="column" flex="auto">
+    <md-input-container flex="auto">
       <label>Name</label>
       <input type="text" ng-model="messageData.name">
     </md-input-container>
-    <md-input-container flex>
+    <md-input-container flex="auto">
       <label>Email (required)</label>
       <input type="email" ng-model="messageData.email" required>
     </md-input-container>
