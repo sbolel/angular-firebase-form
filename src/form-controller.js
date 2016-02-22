@@ -1,4 +1,4 @@
-firebaseFormModule.controller('FormController', ['$scope', '$mdToast', 'MessageFactory', function ($scope, $mdToast, MessageFactory) {
+firebaseFormModule.controller('FormController', ['$scope', '$mdToast', '$location', 'MessageFactory', function ($scope, $mdToast, $location, MessageFactory) {
 
   var toastPosition = {bottom: true, top: false, left: false, right: true};
 
@@ -15,7 +15,9 @@ firebaseFormModule.controller('FormController', ['$scope', '$mdToast', 'MessageF
   };
   
   $scope.submit = function() {
-    var msg = new MessageFactory(angular.copy($scope.messageData), $scope.contactForm.$valid);
+    var data = angular.copy($scope.messageData);
+    data.location = $location.absUrl();
+    var msg = new MessageFactory(data, $scope.contactForm.$valid);
     msg.submit().then(function(){
       formCallbacks.success();
     }).catch(function(error){
