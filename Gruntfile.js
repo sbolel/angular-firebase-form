@@ -12,12 +12,12 @@ module.exports = function(grunt) {
     connect: {
       client: {
         options: {
-          port: 4000,
+          port: 9000,
           base: './demo',
           livereload: true,
           open: {
-            target: 'http://localhost:4000',
-            appName: 'Google Chrome',
+            target: 'http://localhost:9000',
+            appName: 'Chrome',
           }
         }
       }
@@ -65,9 +65,6 @@ module.exports = function(grunt) {
         files: {
           'release/<%= pkg.name %>.js': [
             'src/form-module.js',
-            'src/message-factory.js',
-            'src/form-controller.js',
-            'src/form-directive.js'
           ]
         }
       },
@@ -79,7 +76,6 @@ module.exports = function(grunt) {
             'bower_components/angular-route/angular-route.js',
             'bower_components/angular-animate/angular-animate.js',
             'bower_components/angular-material/angular-material.js',
-            'bower_components/firebase/firebase.js'
           ]
         }
       }
@@ -99,10 +95,29 @@ module.exports = function(grunt) {
           'demo/release/vendor.min.js': ['demo/release/vendor.js']
         }
       }
-    }
+    },
+
+    watch: {
+      html: {
+        files: ['public/**/*.html'],
+        options: {
+          livereload: true
+        }
+      },
+      js: {
+        files: ['public/**/*.js'],
+        options: {
+          livereload: true
+        }
+      },
+      bower: {
+        files: ['bower.json'],
+        tasks:['wiredep']
+      }
+    },
 
   });
-  
+
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -117,7 +132,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build:vendor', ['ngAnnotate:vendor', 'uglify:vendor', 'clean']);
   grunt.registerTask('build', ['build:demo', 'build:vendor']);
 
-  grunt.registerTask('serve', ['connect']);
+  grunt.registerTask('serve', ['connect', 'watch']);
   grunt.registerTask('default', ['serve']);
 
 };

@@ -1,5 +1,7 @@
 # angular-firebase-form
 
+Makes an AJAX request to put a form message into a Firebase location.
+
 ## Usage
 
 1. Include `firebaseForm` in app dependencies
